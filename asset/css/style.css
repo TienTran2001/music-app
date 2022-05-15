@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #ec1f55;
+  --primary-color: #3f3d56;
   --text-color: #333;
 }
 
@@ -24,6 +24,60 @@ html {
   margin: 0 auto;
 }
 
+.navbar {
+  z-index: 10;
+  margin-top: 30px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: end;
+}
+.open .navbar-icon {
+  transform: translateX(-45px);
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+.navbar-icons {
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar-icon {
+  width: 37px;
+  height: 6px;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.navbar-icon:before,
+.navbar-icon:after {
+  content: "";
+  transition: all 0.3s ease;
+  position: absolute;
+  width: 37px;
+  height: 6px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.navbar-icon:before {
+  transform: translateY(-12px);
+  transition: all 0.3s ease;
+}
+.navbar-icon:after {
+  transform: translateY(12px);
+  transition: all 0.3s ease;
+}
+
+.open .navbar-icon:before {
+  transform: rotate(45deg) translate(35px, -35px);
+  transition: all 0.3s ease;
+}
+.open .navbar-icon:after {
+  transform: rotate(-45deg) translate(35px, 35px);
+  transition: all 0.3s ease;
+}
+
 .player .icon-pause {
   display: none;
 }
@@ -41,6 +95,7 @@ html {
   position: fixed;
   top: 0;
   width: 100%;
+  height: 100vh;
   max-width: 480px;
   border-bottom: 1px solid #ebebeb;
   overflow: hidden;
@@ -52,7 +107,7 @@ html {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url("../img/tt.jpg") no-repeat;
+  background: url("../img/tt.jpg") no-repeat center;
   background-size: cover;
   filter: blur(4px);
 }
@@ -63,7 +118,8 @@ header {
   margin-bottom: 10px;
 }
 
-header h2 {
+header h2,
+header h3 {
   color: #fff;
   font-size: 16px;
 }
@@ -166,12 +222,20 @@ header h2 {
 .progress {
   width: 100%;
   -webkit-appearance: none;
+  background: linear-gradient(
+    to right,
+    #82cfd0 0%,
+    #82cfd0 50%,
+    #fff 50%,
+    #fff 100%
+  );
   height: 6px;
-  background: #d3d3d3;
+  /* background: #d3d3d3; */
   outline: none;
   opacity: 0.7;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
+  margin-bottom: 20px;
 }
 
 .progress::-webkit-slider-thumb {
@@ -185,8 +249,22 @@ header h2 {
 
 /* PLAYLIST */
 .playlist {
-  margin-top: 440px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 85%;
+  height: 100vh;
+  background-color: #ccc;
+  margin-top: 0px;
   padding: 12px;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.playlist.openList {
+  transition: all 0.3s ease;
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .song {

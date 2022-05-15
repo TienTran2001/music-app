@@ -2,7 +2,8 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
 const player = $(".player");
-const heading = $("header h2");
+const headingName = $("header h2");
+const headingSinger = $("header h3");
 const thumbBox = $(".cd-thumb-box");
 const thumb = $(".cd-thumb");
 const audio = $("#audio");
@@ -11,16 +12,21 @@ const progress = $(".progress");
 const cdThumb = $(".cd-thumb");
 const nextBtn = $(".btn-next");
 const prevBtn = $(".btn-prev");
+const randomBtn = $(".btn-random");
+const listBtn = $(".navbar-icons");
 
 // api songs
 /**
  * 1. render songs
  * 2. load current song
+ * 3. next prev
+ * 4. random
  */
 
 const app = {
   currentIndex: 0,
   isPlaying: false,
+  isRandom: false,
   songs: [
     {
       name: "Trước đây đã từng nói | 小阿七",
@@ -33,6 +39,18 @@ const app = {
       singer: "- Ycccc",
       path: "./asset/music/bautroidaysao.mp3",
       image: "./asset/img/ttruc1.jpg",
+    },
+    {
+      name: "May mắn | 《有幸》",
+      singer: "- Nhậm Nhiên - 任然",
+      path: "./asset/music/maymannhamnhien.mp3",
+      image: "./asset/img/mayman.png",
+    },
+    {
+      name: "BUỒN không thể BUÔNG - DREAMeR",
+      singer: "- Chilly Cover",
+      path: "./asset/music/buonkhongthebuong.mp3",
+      image: "./asset/img/buonkhongthebuong.png",
     },
   ],
   render: function () {
@@ -65,7 +83,9 @@ const app = {
     });
   },
   loadCurrentSong: function () {
-    heading.textContent = this.currentSong.name + " " + this.currentSong.singer;
+    headingName.textContent = this.currentSong.name;
+    headingSinger.textContent = this.currentSong.singer;
+
     thumbBox.style.backgroundImage = `url("${this.currentSong.image}")`;
     thumb.style.backgroundImage = `url("${this.currentSong.image}")`;
     audio.src = this.currentSong.path;
@@ -84,14 +104,30 @@ const app = {
     }
     this.loadCurrentSong();
   },
+  randomSong: function () {
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * app.songs.length);
+    } while (newIndex === this.currentIndex);
+    this.currentIndex = newIndex;
+    this.loadCurrentSong();
+  },
   handleEven: function () {
     // next song
     nextBtn.onclick = function () {
-      app.nextSong();
+      if (app.isRandom) {
+        app.randomSong();
+      } else {
+        app.nextSong();
+      }
       audio.play();
     };
     prevBtn.onclick = function () {
-      app.prevSong();
+      if (app.isRandom) {
+        app.randomSong();
+      } else {
+        app.prevSong();
+      }
       audio.play();
     };
     // xu ly quay
@@ -112,6 +148,12 @@ const app = {
         audio.play();
       }
     };
+    // random
+    randomBtn.onclick = function () {
+      app.isRandom = !app.isRandom;
+      randomBtn.classList.toggle("active", app.isRandom);
+    };
+
     audio.onplay = function () {
       app.isPlaying = true;
       player.classList.add("playing");
@@ -133,6 +175,11 @@ const app = {
     };
     progress.oninput = function (e) {
       audio.currentTime = e.target.value * (audio.duration / 100);
+    };
+    // xu ly menu
+    listBtn.onclick = function () {
+      listBtn.classList.toggle("open");
+      $(".playlist").classList.toggle("openList");
     };
   },
 
