@@ -18,6 +18,7 @@ const listBtn = $(".navbar-icons");
 const playlist = $(".playlist");
 const songBegin = $(".song-begin");
 const songDuration = $(".song-duration");
+const note = $(".note");
 
 // api songs
 /**
@@ -36,10 +37,39 @@ const app = {
   isRepeat: false,
   songs: [
     {
+      name: "Tình yêu vĩnh viễn không mất đi",
+      singer: "-  Châu Hưng Triết",
+      path: "./asset/music/tinhyeuvinhvienkhongmatdi.mp3",
+      image: "./asset/img/tinhyeuvinhvienkhongmatdi1.png",
+      note: "Nếu sau này không thể gặp lại, mong rằng bạn có thể sống thật tốt, yêu một người, sau đó chậm rãi già đi.. ♥</br> cr:thgiann_",
+    },
+    {
+      name: "Tình yêu vĩnh viễn không mất đi",
+      singer: "- Shan Yi chun",
+      path: "./asset/music/tinhyeuvinhvienkhongmatdi1.mp3",
+      image: "./asset/img/tinhyeuvinhvienkhongmatdi.png",
+      note: "Nếu sau này không thể gặp lại, mong rằng bạn có thể sống thật tốt, yêu một người, sau đó chậm rãi già đi.. ♥</br> cr:thgiann_",
+    },
+    {
+      name: "Một Đường Nở Hoa",
+      singer: "- Ôn Dịch Tâm",
+      path: "./asset/music/motduongnohoa.mp3",
+      image: "./asset/img/motduongnohoa.png",
+      note: "Nguyện cho em sau này một đời an nhiên, bờ vai vững chãi. Nguyện cho em sẽ có người lương thiện kề bên bầu bạn. Những ngày tháng sau không chút muộn phiền ♥ cr:thgiann_",
+    },
+    {
+      name: "Em Bị Cảm Nắng Ở Nơi Đó",
+      singer: "- Đào Lân Trúc",
+      path: "./asset/music/embicamnang.mp3",
+      image: "./asset/img/embicamnang.png",
+      note: "Darling Darling Darling ♥",
+    },
+    {
       name: "Anh không hiểu • 你不明白",
-      singer: "-  joysaaaa",
+      singer: "- joysaaaa",
       path: "./asset/music/anhkhonghieu.mp3",
       image: "./asset/img/anhkhonghieu.png",
+      note: "Thực lòng cậu có yêu tôi như lời cậu nói ?",
     },
     {
       name: "Hướng ánh sáng | 光的方向",
@@ -52,6 +82,7 @@ const app = {
       singer: "- Hồ 66 | 胡66",
       path: "./asset/music/saunaykhigapduoc.mp3",
       image: "./asset/img/saunaykhigapduoc.png",
+      note: "Sau này khi gặp được anh ấy rồi người cùng em trải qua xuân hạ thu đông. Hi vọng em sẽ không còn nhớ đến anh nữa.. ♥</br>cr:thgiann_",
     },
     {
       name: "Rơi Vào Biển Cả | 落海",
@@ -139,6 +170,7 @@ const app = {
     thumbBox.style.backgroundImage = `url("${this.currentSong.image}")`;
     thumb.style.backgroundImage = `url("${this.currentSong.image}")`;
     audio.src = this.currentSong.path;
+    note.innerHTML = this.currentSong.note || "";
   },
   nextSong: function () {
     this.currentIndex++;

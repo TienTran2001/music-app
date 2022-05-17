@@ -234,6 +234,14 @@ header h3 {
   width: 10%;
 }
 
+.note {
+  text-align: center;
+  padding: 30px;
+  color: #fff;
+  font-size: 14px;
+  z-index: 10;
+}
+
 .progress {
   width: 80%;
   -webkit-appearance: none;
