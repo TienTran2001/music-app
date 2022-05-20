@@ -148,6 +148,7 @@ header h3 {
   height: 100%;
   background-size: cover;
   margin: auto;
+  transition: all 0.3s ease;
 }
 
 .cd-thumb {
@@ -159,9 +160,14 @@ header h3 {
   margin: auto;
   position: absolute;
   top: 5%;
-  right: -47%;
+  right: 0;
+  transition: all 0.3s ease;
   z-index: -1;
   border: 3px solid #000;
+}
+.cd-thumb.right {
+  right: -47%;
+  transition: all 0.3s ease;
 }
 
 .cd-thumb::before {

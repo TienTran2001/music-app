@@ -280,6 +280,7 @@ const app = {
     cdThumbAnimation.pause();
     // xu ly play
     playBtn.onclick = function () {
+      thumb.classList.toggle("right");
       if (app.isPlaying) {
         audio.pause();
       } else {
