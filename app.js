@@ -37,8 +37,15 @@ const app = {
   isRepeat: false,
   songs: [
     {
+      name: "Chính là yêu anh",
+      singer: "- yihuik Dĩ Tuệ",
+      path: "./asset/music/chinhlayeuanh.mp3",
+      image: "./asset/img/chinhlayeuanh.png",
+      note: " Thứ tình yêu có thể trôi đi mãi mãi, mùa hạ qua đi, mùa thu qua đi, tươi mát mất đi là thứ cuồng nhiệt. </br>⋆🌙 ⋆🌙 ⋆🌙 ⋆🌙",
+    },
+    {
       name: "Dũng khí",
-      singer: "- Luân Tang",
+      singer: "- Lương Tịnh Như",
       path: "./asset/music/dungkhi1.mp3",
       image: "./asset/img/dungkhi.png",
       note: "Nhiều lúc không biết rằng bản thân mình cần điều gì nhất - yêu một ai đó hay chỉ là sự tĩnh lặng trong thế giới vội vã này...♥",
