@@ -161,13 +161,13 @@ header h3 {
   position: absolute;
   top: 5%;
   right: 0;
-  transition: all 0.3s ease;
+  transition: all 0.8s ease;
   z-index: -1;
   border: 3px solid #000;
 }
 .cd-thumb.right {
   right: -47%;
-  transition: all 0.3s ease;
+  transition: all 0.8s ease;
 }
 
 .cd-thumb::before {

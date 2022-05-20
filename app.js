@@ -280,7 +280,6 @@ const app = {
     cdThumbAnimation.pause();
     // xu ly play
     playBtn.onclick = function () {
-      thumb.classList.toggle("right");
       if (app.isPlaying) {
         audio.pause();
       } else {
@@ -301,11 +300,13 @@ const app = {
       app.isPlaying = true;
       player.classList.add("playing");
       cdThumbAnimation.play();
+      thumb.classList.add("right");
     };
     audio.onpause = function () {
       app.isPlaying = false;
       player.classList.remove("playing");
       cdThumbAnimation.pause();
+      thumb.classList.remove("right");
     };
     // xu ly thanh
     audio.ontimeupdate = function () {
