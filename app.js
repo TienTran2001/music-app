@@ -37,6 +37,20 @@ const app = {
   isRepeat: false,
   songs: [
     {
+      name: "Ngôi Sao Trên Trời Không Nói Chuyện",
+      singer: "- Bất Thị Hoa Hỏa Nha ft KOZAY",
+      path: "./asset/music/ngoisaotrentroikhongnoichuyen.mp3",
+      image: "./asset/img/ngoisaotrentroikhongnoichuyen.png",
+      note: "Cảm ơn những suy nghĩ của mẹ, sưởi ấm những năm tháng của con, cảm ơn mẹ không phải siêu nhân mà trở thành đấng toàn năng cho con, cảm ơn mẹ đã là mẹ của con, đây là may mắn và phước lành lớn nhất trong cuộc đời của con. </br>⋆🌙 ⋆🌙 ⋆🌙 ⋆🌙",
+    },
+    {
+      name: "Rất Muốn, Rất Muốn | 好想好想 |",
+      singer: "- Cổ Cự Cơ | 古巨基",
+      path: "./asset/music/ratmuonratmuon.mp3",
+      image: "./asset/img/ratmuonratmuon.png",
+      note: "⋆🌙 ⋆🌙 ⋆🌙 ⋆🌙",
+    },
+    {
       name: "Chính là yêu anh",
       singer: "- yihuik Dĩ Tuệ",
       path: "./asset/music/chinhlayeuanh.mp3",
