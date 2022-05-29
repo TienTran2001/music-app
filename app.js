@@ -19,6 +19,8 @@ const playlist = $(".playlist");
 const songBegin = $(".song-begin");
 const songDuration = $(".song-duration");
 const note = $(".note");
+const bgMusic = $(".dashboard");
+const layer = $(".layer");
 
 // api songs
 /**
@@ -36,6 +38,13 @@ const app = {
   isRandom: false,
   isRepeat: false,
   songs: [
+    {
+      name: " Trở Về Mùa Hạ|回到夏天",
+      singer: "- Ngạo Thất Gia",
+      path: "./asset/music/trovemuaha.mp3",
+      image: "./asset/img/trovemuaha.png",
+      note: "Nếu được quay trở lại mùa hạ năm ấy, tớ nhất định sẽ không thích cậu</br>⋆🌙",
+    },
     {
       name: "Ngôi Sao Trên Trời Không Nói Chuyện",
       singer: "- Bất Thị Hoa Hỏa Nha ft KOZAY",
@@ -222,7 +231,7 @@ const app = {
   loadCurrentSong: function () {
     headingName.textContent = this.currentSong.name;
     headingSinger.textContent = this.currentSong.singer;
-
+    bgMusic.style.backgroundImage = `url(${this.currentSong.image})`;
     thumbBox.style.backgroundImage = `url("${this.currentSong.image}")`;
     thumb.style.backgroundImage = `url("${this.currentSong.image}")`;
     audio.src = this.currentSong.path;
@@ -346,6 +355,12 @@ const app = {
     listBtn.onclick = function () {
       listBtn.classList.toggle("open");
       playlist.classList.toggle("openList");
+      layer.classList.toggle("active");
+    };
+    layer.onclick = function () {
+      listBtn.classList.toggle("open");
+      playlist.classList.toggle("openList");
+      layer.classList.toggle("active");
     };
     // xu ly khi ket thuc bai hat thi chuyen sang bai hat moi
     audio.onended = function () {

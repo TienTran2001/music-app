@@ -26,10 +26,9 @@ html {
 
 .navbar {
   z-index: 10;
-  margin-top: 30px;
-  margin-right: 10px;
-  display: flex;
-  justify-content: end;
+  margin-top: 45px;
+  position: fixed;
+  right: 10px;
 }
 .open .navbar-icon {
   transform: translateX(-45px);
@@ -40,6 +39,7 @@ html {
   margin-right: 15px;
   transition: all 0.3s ease;
   cursor: pointer;
+  z-index: 10;
 }
 
 .navbar-icon {
@@ -91,7 +91,6 @@ html {
 }
 
 .dashboard {
-  background-size: cover;
   position: fixed;
   top: 0;
   width: 100%;
@@ -99,6 +98,9 @@ html {
   max-width: 480px;
   border-bottom: 1px solid #ebebeb;
   overflow: hidden;
+  background: url("../img/trovemuaha.png") no-repeat center;
+  background-size: contain;
+  /* background-position: center; */
 }
 
 .dashboard::before {
@@ -107,11 +109,30 @@ html {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url("../img/bg5.jpg") no-repeat center;
+  /* background: url("../img/bg5.jpg") no-repeat center; */
+  background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
   filter: blur(4px);
 }
-
+/* Layer */
+.layer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.layer.active {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
 /* HEADER */
 header {
   text-align: center;
@@ -139,7 +160,7 @@ header h3 {
   height: 200px;
   margin: 0 auto;
   position: relative;
-  margin-top: 50px;
+  margin-top: 140px;
   margin-bottom: 30px;
 }
 
@@ -203,7 +224,7 @@ header h3 {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 18px 0 8px 0;
+  padding: 18px 50px 8px 50px;
 }
 
 .control .btn {
@@ -230,7 +251,7 @@ header h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 50px;
   margin-top: 30px;
 }
 
@@ -242,10 +263,11 @@ header h3 {
 
 .note {
   text-align: center;
-  padding: 30px;
+  padding: 30px 50px;
   color: #fff;
   font-size: 14px;
   z-index: 10;
+  line-height: 30px;
 }
 
 .progress {
@@ -278,13 +300,13 @@ header h3 {
 /* PLAYLIST */
 .playlist {
   position: absolute;
-  top: 0;
+  top: 0px;
   left: 0;
   width: 85%;
   min-height: 100vh;
   background-color: #ccc;
   margin-top: 0px;
-  padding: 12px;
+  padding: 10px;
   transform: translateX(-100%);
   opacity: 0;
   transition: all 0.3s ease;
@@ -295,6 +317,7 @@ header h3 {
   transform: translateX(0);
   opacity: 1;
   visibility: visible;
+  z-index: 999;
 }
 
 .song {
