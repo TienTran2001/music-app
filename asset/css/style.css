@@ -165,7 +165,7 @@ header h3 {
   transition: all 0.3s linear;
 }
 .cd-box.active {
-  transform: translateX(-25px);
+  transform: translateX(-35px);
   transition: all 0.3s linear;
 }
 
