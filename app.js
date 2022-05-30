@@ -21,6 +21,7 @@ const songDuration = $(".song-duration");
 const note = $(".note");
 const bgMusic = $(".dashboard");
 const layer = $(".layer");
+const cdBox = $(".cd-box");
 
 // api songs
 /**
@@ -38,6 +39,13 @@ const app = {
   isRandom: false,
   isRepeat: false,
   songs: [
+    {
+      name: " Bạn từng là thiếu niên 你曾是少年",
+      singer: "- S.H.E",
+      path: "./asset/music/bantunglathieunien.mp3",
+      image: "./asset/img/bantunglathieunien.png",
+      note: "Nhiều năm trước, có một đôi mắt trong veo, nhanh như tia chớp mùa xuân, nó muốn nhìn thế giới xa nhất, nó cảm thấy mình có đôi cánh để bay qua núi và đại dương.</br>⋆⋆⋆",
+    },
     {
       name: " Trở Về Mùa Hạ|回到夏天",
       singer: "- Ngạo Thất Gia",
@@ -331,12 +339,14 @@ const app = {
       player.classList.add("playing");
       cdThumbAnimation.play();
       thumb.classList.add("right");
+      cdBox.classList.add("active");
     };
     audio.onpause = function () {
       app.isPlaying = false;
       player.classList.remove("playing");
       cdThumbAnimation.pause();
       thumb.classList.remove("right");
+      cdBox.classList.remove("active");
     };
     // xu ly thanh
     audio.ontimeupdate = function () {

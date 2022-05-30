@@ -156,12 +156,17 @@ header h3 {
 }
 
 .cd-box {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   margin: 0 auto;
   position: relative;
   margin-top: 140px;
   margin-bottom: 30px;
+  transition: all 0.3s linear;
+}
+.cd-box.active {
+  transform: translateX(-25px);
+  transition: all 0.3s linear;
 }
 
 .cd-thumb-box {
@@ -169,25 +174,26 @@ header h3 {
   height: 100%;
   background-size: cover;
   margin: auto;
-  transition: all 0.3s ease;
+  transition: all 0.3s linear;
+  background-position: center;
 }
 
 .cd-thumb {
-  width: 90%;
-  height: 90%;
+  width: 98%;
+  height: 98%;
   border-radius: 50%;
   background-color: #333;
   background-size: cover;
   margin: auto;
   position: absolute;
-  top: 5%;
+  top: 1%;
   right: 0;
   transition: all 0.8s ease;
   z-index: -1;
   border: 3px solid #000;
 }
 .cd-thumb.right {
-  right: -47%;
+  right: -48%;
   transition: all 0.8s ease;
 }
 
