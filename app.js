@@ -40,6 +40,13 @@ const app = {
   isRepeat: false,
   songs: [
     {
+      name: "  Gốc bệnh | 病因",
+      singer: "- yihuik苡慧",
+      path: "./asset/music/gocbenh.mp3",
+      image: "./asset/img/gocbenh.png",
+      note: "Ngay cả khi bạn quay lại, </br>bạn không thể chữa lành cho tôi.</br>⋆🌙",
+    },
+    {
       name: " Bạn từng là thiếu niên 你曾是少年",
       singer: "- S.H.E",
       path: "./asset/music/bantunglathieunien.mp3",
