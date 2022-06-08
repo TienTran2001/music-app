@@ -40,6 +40,13 @@ const app = {
   isRepeat: false,
   songs: [
     {
+      name: "Yêu Anh",
+      singer: "- Diệp Quỳnh Lâm",
+      path: "./asset/music/yeuanh.mp3",
+      image: "./asset/img/yeuanh.png",
+      note: "</br>⋆🌙",
+    },
+    {
       name: "  Gốc bệnh | 病因",
       singer: "- yihuik苡慧",
       path: "./asset/music/gocbenh.mp3",
@@ -228,8 +235,11 @@ const app = {
           <h3 class="title">${song.name}</h3>
           <p class="author">${song.singer}</p>
         </div>
-        <div class="option">
-          <i class="fas fa-ellipsis-h"></i>
+        <div class="option ${
+          index == this.currentIndex ? "active" : ""
+        } " data-index="${index}">
+          <!-- <i class="fas fa-ellipsis-h"></i> -->
+          <i class="fa-solid fa-heart"></i>
         </div>
       </div>
         `;
@@ -389,12 +399,12 @@ const app = {
     };
     playlist.onclick = function (e) {
       const songNode = e.target.closest(".song:not(.active)");
+      const op = e.target.closest(".option");
 
       if (songNode || e.target.closest(".option")) {
         // Xử lý khi click vào song
         // Handle when clicking on the song
         if (songNode) {
-          console.log(songNode.dataset.index);
           app.currentIndex = Number(songNode.dataset.index);
           app.loadCurrentSong();
           app.render();
@@ -403,7 +413,9 @@ const app = {
         }
         // Xử lý khi click vào song option
         // Handle when clicking on the song option
-        if (e.target.closest(".option")) {
+        if (op) {
+          // op.classList.toggle("active");
+          // console.log(op.dataset.index);
         }
       }
     };
@@ -411,6 +423,7 @@ const app = {
       songDuration.textContent = app.formatTime(audio.duration);
     };
   },
+
   start: function () {
     // dinh nghia thuoc tinh cho object
     this.defineProperties();

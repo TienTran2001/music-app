@@ -292,6 +292,11 @@ header h3 {
   opacity: 0.7;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
+  margin-left: 5px;
+}
+
+span.song-begin {
+  color: #82cfd0;
 }
 
 .progress::-webkit-slider-thumb {
@@ -345,10 +350,14 @@ header h3 {
   opacity: 0.8;
 }
 
-.song.active .option,
+.song.active,
 .song.active .author,
 .song.active .title {
   color: #fff;
+}
+
+.option.active i {
+  color: red;
 }
 
 .song .thumb {
