@@ -42,7 +42,7 @@ const app = {
     {
       name: " Có lẽ | 或许",
       singer: "- LBI利比",
-      path: "./asset/music/cole-lbi.m4a",
+      path: "./asset/music/cole-lbi.mp3",
       image: "./asset/img/cole-lbi.jpg",
       note: "🌙",
     },
