@@ -40,11 +40,18 @@ const app = {
   isRepeat: false,
   songs: [
     {
+      name: " Nỗi Nhớ Tựa Thiên Hà | 房东的猫 ",
+      singer: "- Mèo của chủ nhà | 所念皆星河",
+      path: "./asset/music/noinhotuathienha.mp3",
+      image: "./asset/img/noinhotuathienha.png",
+      note: "“Tuổi thanh xuân sẽ qua và cánh đồng sẽ già đi sau mỗi mùa hoa thắm. Thời gian thì nhanh, nỗi buồn thì chậm chạp, sao chúng ta rẽ đâu cũng giẫm đạp phải nỗi buồn ?”</br>🌿🪐",
+    },
+    {
       name: " Có lẽ | 或许",
       singer: "- LBI利比",
       path: "./asset/music/cole-lbi.mp3",
       image: "./asset/img/cole-lbi.jpg",
-      note: "🌙",
+      note: "⋆🌙",
     },
     // {
     //   name: "Yêu Anh",
