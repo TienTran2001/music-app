@@ -40,6 +40,13 @@ const app = {
   isRepeat: false,
   songs: [
     {
+      name: " Hòa với sự dịu dàng của vũ trụ | 和宇宙的温柔关联 ",
+      singer: "- Mèo của chủ nhà | 所念皆星河",
+      path: "./asset/music/hoadiuvoivutru.mp3",
+      image: "./asset/img/hoadiuvoivutru.png",
+      note: "“Khi một cơn gió thôi qua cánh diều sẽ bay lên”</br>🌿🪐",
+    },
+    {
       name: " Nỗi Nhớ Tựa Thiên Hà | 房东的猫 ",
       singer: "- Mèo của chủ nhà | 所念皆星河",
       path: "./asset/music/noinhotuathienha.mp3",
