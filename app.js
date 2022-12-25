@@ -40,6 +40,13 @@ const app = {
   isRepeat: false,
   songs: [
     {
+      name: " Giống Như Bạn| 和你一样 ",
+      singer: "- Lý Vũ Xuân | 李宇春",
+      path: "./asset/music/giongnhuban.mp3",
+      image: "./asset/img/giongnhuban.png",
+      note: "“🌿",
+    },
+    {
       name: " Hòa với sự dịu dàng của vũ trụ | 和宇宙的温柔关联 ",
       singer: "- Mèo của chủ nhà | 所念皆星河",
       path: "./asset/music/hoadiuvoivutru.mp3",
